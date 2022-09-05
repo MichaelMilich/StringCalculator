@@ -22,7 +22,9 @@ def turn_into_numbers_list(input):
 def turn_into_operators_list(input):
     return re.findall("[*+-/]", input)
 
-
+# I want to make this function more readable, to that I want to make the inside of the for loops into their own functions.
+# but to do that I need to always work on the same numbers and operators list.
+# Is there a way to make it so without using classes or global operator? I fear the global variable is an overkill here
 def calculate_in_order(numbers, operators):
     while operators.count("*") + operators.count("/") > 0:
         for idx, operator in enumerate(operators):
